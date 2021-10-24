@@ -6,44 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<div class="navbar">
-  <a href="#aboutMe">About Me</a>
-  <a href="#projects">Projects</a>
-  <a href="#gaming History">Gaming History</a>
-  <a href="#contact">Contact</a>
+<div class="navbar"><strong>
+  <a href="#aboutme" >About Me</a>
+  <a href="#projects" onclick="myFunction()">Projects</a>
+  <a href="#gaminghistory" onclick="myFunction()">Gaming History</a>
+  <a href="#contact" onclick="myFunction()">Contact</a>
 </div>
 <body>
-    
-    <br>
-    <h1> <em> <p>I just want to make</p><p>and play video games.</p> </em> </h1>
-    <br>
-    <br>
-    <br>
-    <p>Hello. I like video games and want to spend my life playing and making them, hopefully games with both strong story and gameplay. Other than that, I enjoy reading various genres of manga.</p>
-</body>
+  <img class="banner" src="pictures/banner1.png" alt="banner1" style="width:100%">
+  <br>
+  <h1 id="aboutme"> About Me</h1>
+  <p>Hello. I'm Roger, a Computational Media student from Georgia Tech. I like video games and want to play and make them, hopefully games with both strong story and gameplay. Other than that, I enjoy reading various genres of manga.</p>
+  <div class="space"></div>
+  <h1 id="projects">Projects</h1>
+  <p>None for now</p>
+  <div class="space"></div>
+  <h1 id="gaminghistory">Gaming History</h1>
+  <p>WIP</p>
+  <div class="space"></div>
+  <h1 id="contact">Contact</h1>
+  <p>rlee311@gatech.edu</p>
+  <div class="space"></div>
+  <br>
+  <div class="space"></div>
+  </body>
 </html>
 <style>
+  .space { 
+    margin-top: 300px; 
+  }
   body {
+    background-color: rgb(0, 125, 241);
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
   }
   
   .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(0, 125, 241);
   }
   
   .navbar a {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 50px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
   }
   
   .navbar a:hover {
-    background-color: #ddd;
+    background-color: rgb(104, 171, 248);
     color: black;
   }
   
