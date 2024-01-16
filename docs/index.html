@@ -5,64 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href = "style.css" />
 </head>
-<div class="navbar"><strong>
-  <a href="#aboutme" >About Me</a>
-  <a href="#projects" onclick="myFunction()">Projects</a>
-  <a href="#gaminghistory" onclick="myFunction()">Gaming History</a>
-  <a href="#contact" onclick="myFunction()">Contact</a>
+<div class="navbar" id="myNavbar"><strong>
+  <a></a>
+  <a href="#top">Home</a>
+  <a href="#aboutme">About Me</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact" >Contact</a>
+</div>
+<div class="space" id = "top" style="padding-top: 50px;">
+  <br><br>
 </div>
 <body>
-  <img class="banner" src="pictures/banner1.png" alt="banner1" style="width:100%">
-  <br>
-  <h1 id="aboutme"> About Me</h1>
-  <p>Hello. I'm Roger, a Computational Media student from Georgia Tech. I like video games and want to play and make them, hopefully games with both strong story and gameplay. Other than that, I enjoy reading various genres of manga.</p>
-  <div class="space"></div>
-  <h1 id="projects">Projects</h1>
-  <p>None for now</p>
-  <div class="space"></div>
-  <h1 id="gaminghistory"> Gaming History</h1>
-   
-  <p>WIP</p>
-  <div class="space"></div>
-  <h1 id="contact">Contact</h1>
-  <p>rlee311@gatech.edu</p>
-  <div class="space"></div>
-  <br>
-  <div class="space"></div>
+  <img class="banner" src="pictures/SPBanner.gif" alt="banner1" >
+  <div class="space"id="aboutme">
+    <br><br>
+  </div>
+  <div class="section" >
+    <h1> About Me</h1>
+    <p>Hello. I'm Roger, a Computational Media student from Georgia Tech.</p>
+  </div>
+  <div class="space" id="projects">
+    <br><br>
+  </div>
+  <div class = "section">
+  <h1>Projects</h1>
+  
+  </div>
+  <div class="space" id="contact">
+    <br><br>
+  </div>
+  <div class = "section">
+  <h1>Contact</h1>
+  <div class = "links">
+    <a href="mailto:rleetech7@gmail.com"> Email </a> <p style="display: inline-block"> | </p>
+    <a href="https://github.com/KurrBlocked"> Github </a><p style="display: inline-block"> | </p>
+    <a href="https://www.linkedin.com/in/roger-lee-kurrblocked/"> Linkedin </a>
+  </div>
+  </div>
+  <div class="space" style="padding-top: 500px;">
+    <br>
+  </div>
   </body>
 </html>
-<style>
-  .space { 
-    margin-top: 300px; 
+<script>
+  window.onscroll = function () {
+    myFunction();
+  };
+  window.onmousemove = function () {
+    updateNavbarVis();
   }
-  body {
-    background-color: rgb(0, 125, 241);
-    margin: 0;
-    font-family: sans-serif;
+
+  var navbar = document.getElementById("myNavbar");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+      navbar.style.visibility  = "visible";
+    }
+    updateNavbarVis();
   }
-  
-  .navbar {
-    overflow: hidden;
-    background-color: rgb(0, 125, 241);
+  function updateNavbarVis() {
+    if (isMouseOverNavbar() || (window.pageYOffset <= sticky)) {
+      navbar.style.visibility  = "visible";
+    } else {
+      navbar.style.visibility  = "hidden";
+    }
   }
-  
-  .navbar a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 50px;
-    text-decoration: none;
-    font-size: 20px;
+  function isMouseOverNavbar() {
+    var rect = navbar.getBoundingClientRect();
+      return (
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom
+      );
   }
-  
-  .navbar a:hover {
-    background-color: rgb(104, 171, 248);
-    color: black;
-  }
-  
-  .navbar a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  </style>
+</script>
